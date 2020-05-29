@@ -1,5 +1,36 @@
 .App {
   text-align: center;
+  /* background: #f3e5f5; */
+  background: url("./hal-gatewood-tZc3vjPCk-Q-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding-bottom: 30px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+@media (max-width: 574px) {
+  .form-inline {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .addBtn {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form-control {
+    width: 250px;
+    margin-left: 25px;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .App {
+    font-size: 20px;
+  }
 }
 
 .App form {
@@ -30,7 +61,7 @@
 
 .addBtn {
   background-color: #ae52d4;
-  border-color: none;
+  border-color: transparent;
   padding: 9px;
   border-radius: 8px;
   color: white;
