@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+}
+
+.App form {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+#bootstrap-overrides .form-group {
+  margin-bottom: 0;
+}
+
+.App h1 {
+  padding-top: 20px;
+  color: #7b1fa2;
+  /* color: red; */
+}
+
+.todo-input {
+  margin-right: 30px;
+}
+
+.todo-wrapper {
+  margin-top: 40px;
+}
+
+.addBtn {
+  background-color: #ae52d4;
+  border-color: none;
+  padding: 9px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.addBtn:disabled {
+  background: #ddd;
+  box-shadow: none;
+  color: gray;
+}
+
+.addBtn:focus {
+  outline: none;
+}
+
+.scaleIn-enter {
+  transform: scale(0);
+}
+
+.scaleIn-enter-active {
+  transform: scale(1);
+  transition: all 400ms;
+}
+
+.scaleIn-exit {
+  transform: scale(1);
+}
+
+.scaleIn-exit-active {
+  transform: scale(0);
+  transition: all 400ms;
+}
