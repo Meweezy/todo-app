@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   /* background: #f3e5f5; */
-  background: url("./hal-gatewood-tZc3vjPCk-Q-unsplash.jpg");
+  background: url("./zoran-borojevic-6qThS1x6P6A-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -83,7 +83,7 @@
 
 .scaleIn-enter-active {
   transform: scale(1);
-  transition: all 400ms;
+  transition: all 400ms ease-in-out;
 }
 
 .scaleIn-exit {
@@ -92,5 +92,5 @@
 
 .scaleIn-exit-active {
   transform: scale(0);
-  transition: all 400ms;
+  transition: all 400ms ease-out;
 }

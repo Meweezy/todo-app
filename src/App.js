@@ -2,32 +2,41 @@ import React, { useState, useEffect } from "react";
 import db from "./firebase";
 import "./App.css";
 import Todo from "./Todo";
-import { CSSTransition } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
   const [scaleIn, setScaleIn] = useState(false);
+  const [docData, setDocData] = useState([]);
 
   useEffect(() => {
     db.collection("todos").onSnapshot((snapshot) => {
-      // console.log(snapshot.docs.map((doc) => doc.data()));
+      setDocData(
+        snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))
+      );
       setTodos(snapshot.docs.map((doc) => doc.data().title));
       setScaleIn(true);
     });
   }, []);
 
+  // console.log(docData[0]);
+
   const deleteTodo = (e) => {
+    e.preventDefault();
     let index = e.target.value;
-    db.collection("todos")
-      .where("title", "==", todos[index])
-      .get()
-      .then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-          // console.log(doc);
-          db.collection("todos").doc(doc.id).delete();
-        });
-      });
+    // db.collection("todos")
+    // .where("title", "==", todos[index])
+    //   .get()
+    //   .then(function (querySnapshot) {
+    //     querySnapshot.forEach(function (doc) {
+    //       // console.log(doc);
+    //       db.collection("todos").doc(doc.id).delete();
+    //     });
+    //   });
+    // console.log(docData[index].id);
+    db.collection("todos").doc(docData[index].id).delete();
   };
 
   const addTodo = (e) => {
@@ -36,14 +45,12 @@ function App() {
 
     //add what is in iput to the todos array
     //clear the input field
-
-    // setTodos([...todos, input]);
-
     db.collection("todos").add({
       title: input,
     });
     setInput("");
     // setScaleIn(true);
+    console.log(scaleIn);
 
     console.log([...todos, input]);
   };
@@ -67,28 +74,31 @@ function App() {
           ADD TODO
         </button>
       </form>
-
-      <CSSTransition
-        in={scaleIn}
-        timeout={300}
-        classNames="scaleIn"
-        unmountOnExit
-        onEnter={() => setScaleIn(true)}
-        onEntered={() => setScaleIn(true)}
-        onExit={() => setScaleIn(true)}
-        onExited={() => setScaleIn(true)}
-      >
+      <TransitionGroup>
         <div className="todo-wrapper">
           {todos.map((todo, index) => (
-            <Todo
-              title={todo}
-              value={index}
-              key={index}
-              deleteTodo={deleteTodo}
-            ></Todo>
+            <CSSTransition
+              in={scaleIn}
+              timeout={300}
+              classNames="scaleIn"
+              // key={uuidv4()}
+              unmountOnExit
+              // onEnter={() => setScaleIn(true)}
+              // onEntered={() => setScaleIn(true)}
+              // onExit={() => setScaleIn(false)}
+              // onExiting={() => setScaleIn(false)}
+              // onExited={() => setScaleIn(false)}
+            >
+              <Todo
+                title={todo}
+                value={index}
+                key={uuidv4()}
+                deleteTodo={deleteTodo}
+              ></Todo>
+            </CSSTransition>
           ))}
         </div>
-      </CSSTransition>
+      </TransitionGroup>
     </div>
   );
 }

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.38c553e0.chunk.css",
+    "main.js": "/static/js/main.b92f2cc6.chunk.js",
+    "main.js.map": "/static/js/main.b92f2cc6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1b47fdd3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1b47fdd3.js.map",
+    "static/css/2.829c9cb5.chunk.css": "/static/css/2.829c9cb5.chunk.css",
+    "static/js/2.4b718812.chunk.js": "/static/js/2.4b718812.chunk.js",
+    "static/js/2.4b718812.chunk.js.map": "/static/js/2.4b718812.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a8c0754170373f6e99bc4cf4b5b4c989.js": "/precache-manifest.a8c0754170373f6e99bc4cf4b5b4c989.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.829c9cb5.chunk.css.map": "/static/css/2.829c9cb5.chunk.css.map",
+    "static/css/main.38c553e0.chunk.css.map": "/static/css/main.38c553e0.chunk.css.map",
+    "static/js/2.4b718812.chunk.js.LICENSE.txt": "/static/js/2.4b718812.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/zoran-borojevic-6qThS1x6P6A-unsplash.0b08e3aa.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1b47fdd3.js",
+    "static/css/2.829c9cb5.chunk.css",
+    "static/js/2.4b718812.chunk.js",
+    "static/css/main.38c553e0.chunk.css",
+    "static/js/main.b92f2cc6.chunk.js"
+  ]
+}
